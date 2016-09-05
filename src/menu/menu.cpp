@@ -545,6 +545,7 @@ bool M_Responder (event_t *ev)
 		}
 		else if (menuactive != MENU_WaitKey && (ev->type == EV_KeyDown || ev->type == EV_KeyUp))
 		{
+			Printf("%s\n", "M_Responder detected a joystick press while menu open");
 			keyup = ev->type == EV_KeyUp;
 
 			ch = ev->data1;
@@ -553,6 +554,7 @@ bool M_Responder (event_t *ev)
 
 			switch (ch)
 			{
+				Printf("%s\n", "Joy1 was pressed in menu");
 			case KEY_JOY1:
 			case KEY_PAD_A:
 				mkey = MKEY_Enter;
