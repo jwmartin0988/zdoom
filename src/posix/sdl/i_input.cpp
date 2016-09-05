@@ -479,18 +479,18 @@ void MessagePump (const SDL_Event &sev)
 			{
 			case 0:
 				Printf("%s\n", "Button 1 Pressed while in menu (CODE 0)");
-				event.type = sev.type == SDL_JOYBUTTONDOWN ? EV_KeyDown : EV_KeyUp;
-				event.data1 = KEY_ENTER;
+				event.type = sev.type == EV_GUI_Event;
+				event.data1 = GK_RETURN;
 				break;
 			case 1:
 				Printf("%s\n", "Button 2 Pressed while in menu (CODE 1)");
-				event.type = sev.type == SDL_JOYBUTTONDOWN ? EV_KeyDown : EV_KeyUp;
-				event.data1 = KEY_ESCAPE;
+				event.type = sev.type == EV_GUI_Event;
+				event.data1 = GK_ESCAPE;
 				break;
 			case 10:
 				Printf("%s\n", "Select Pressed while in menu (CODE 10)");
-				event.type = sev.type == SDL_JOYBUTTONDOWN ? EV_KeyDown : EV_KeyUp;
-				event.data1 = KEY_ESCAPE;
+				event.type = sev.type == EV_GUI_Event;
+				event.data1 = GK_ESCAPE;
 				break;
 			}
 			D_PostEvent(&event);
