@@ -492,6 +492,7 @@ bool M_Responder (event_t *ev)
 		// the multiple inputs into buttons and handle the repetition manually.
 		if (ev->type == EV_GUI_Event)
 		{
+			Printf("%s\n", "M_Responder detected a key press while menu open");
 			fromcontroller = false;
 			if (ev->subtype == EV_GUI_KeyRepeat)
 			{
@@ -535,6 +536,7 @@ bool M_Responder (event_t *ev)
 				default:
 					if (!keyup)
 					{
+						Printf("%s\n", "M_Responder is sending mkey to the menu");
 						return DMenu::CurrentMenu->Responder(ev);
 					}
 					break;
