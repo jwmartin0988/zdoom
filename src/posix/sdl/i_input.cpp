@@ -451,17 +451,21 @@ void MessagePump (const SDL_Event &sev)
 	case SDL_JOYBUTTONUP:
 		if (!GUICapture)
 		{
+			Printf("%i\n", sev.jbutton.button);
 			switch (sev.jbutton.button)
 			{
 			case 0:
+				Printf("%s\n", "Button 1 Pressed (CODE 0)");
 				event.type = sev.type == SDL_JOYBUTTONDOWN ? EV_KeyDown : EV_KeyUp;
 				event.data1 = KEY_JOY1;
 				break;
 			case 1:
+				Printf("%s\n", "Button 2 Pressed (CODE 1)");
 				event.type = sev.type == SDL_JOYBUTTONDOWN ? EV_KeyDown : EV_KeyUp;
 				event.data1 = KEY_JOY2;
 				break;
 			case 10:
+				Printf("%s\n", "Select Pressed (CODE 10)");
 				event.type = sev.type == SDL_JOYBUTTONDOWN ? EV_KeyDown : EV_KeyUp;
 				event.data1 = KEY_ESCAPE;
 				break;
