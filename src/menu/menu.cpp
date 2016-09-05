@@ -546,7 +546,7 @@ bool M_Responder (event_t *ev)
 			keyup = ev->type == EV_KeyUp;
 
 			ch = ev->data1;
-			Printf(128, "%s\n", ch);
+			Printf(128, "%i\n", ch);
 			
 
 
