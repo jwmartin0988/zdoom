@@ -546,7 +546,7 @@ bool M_Responder (event_t *ev)
 			keyup = ev->type == EV_KeyUp;
 
 			ch = ev->data1;
-			Printf("%s\n", "Button Pressed")
+			Printf("%s\n", "Button Pressed");
 			Printf("%i\n", ch);
 			
 
