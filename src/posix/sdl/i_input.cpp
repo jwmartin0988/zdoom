@@ -451,11 +451,22 @@ void MessagePump (const SDL_Event &sev)
 	case SDL_JOYBUTTONUP:
 		if (!GUICapture)
 		{
-			Printf("%i\n", sev.jbutton.button);
-			event.type = sev.type == SDL_JOYBUTTONDOWN ? EV_KeyDown : EV_KeyUp;
-			event.data1 = KEY_FIRSTJOYBUTTON + sev.jbutton.button;
-			if(event.data1 != 0)
-				D_PostEvent(&event);
+			switch (sev.jbutton.button)
+			{
+			case 0:
+				event.type = sev.type == SDL_JOYBUTTONDOWN ? EV_KeyDown : EV_KeyUp;
+				event.data1 = KEY_JOY1;
+				break;
+			case 1:
+				event.type = sev.type == SDL_JOYBUTTONDOWN ? EV_KeyDown : EV_KeyUp;
+				event.data1 = KEY_JOY2;
+				break;
+			case 10:
+				event.type = sev.type == SDL_JOYBUTTONDOWN ? EV_KeyDown : EV_KeyUp;
+				event.data1 = KEY_ESCAPE;
+				break;
+			}
+			D_PostEvent(&event);
 		}
 		break;
 	}
