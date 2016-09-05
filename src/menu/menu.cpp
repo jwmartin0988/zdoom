@@ -552,11 +552,13 @@ bool M_Responder (event_t *ev)
 
 			switch (ch)
 			{
+			case 394:
 			case KEY_JOY1:
 			case KEY_PAD_A:
 				mkey = MKEY_Enter;
 				break;
 
+			case 392:
 			case KEY_JOY2:
 			case KEY_PAD_B:
 				mkey = MKEY_Back;
