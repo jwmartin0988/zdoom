@@ -546,19 +546,18 @@ bool M_Responder (event_t *ev)
 			keyup = ev->type == EV_KeyUp;
 
 			ch = ev->data1;
-			Printf(128, "%i\n", ch);
+			Printf("%s\n", "Button Pressed")
+			Printf("%i\n", ch);
 			
 
 
 			switch (ch)
 			{
-			case 394:
 			case KEY_JOY1:
 			case KEY_PAD_A:
 				mkey = MKEY_Enter;
 				break;
-
-			case 392:
+				
 			case KEY_JOY2:
 			case KEY_PAD_B:
 				mkey = MKEY_Back;
