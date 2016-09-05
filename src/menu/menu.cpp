@@ -546,6 +546,9 @@ bool M_Responder (event_t *ev)
 			keyup = ev->type == EV_KeyUp;
 
 			ch = ev->data1;
+			printf(ch);
+
+
 			switch (ch)
 			{
 			case KEY_JOY1:
